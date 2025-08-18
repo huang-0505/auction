@@ -13,7 +13,6 @@ import { LawPracticeWheel } from "@/components/law-sections/law-practice-wheel"
 import { LawTeamWheel } from "@/components/law-sections/law-team-wheel"
 import { LawCultureWheel } from "@/components/law-sections/law-culture-wheel"
 import { LawContactWheel } from "@/components/law-sections/law-contact-wheel"
-import { LawFixedFooter } from "@/components/law-fixed-footer"
 
 export default function HomePage() {
   const { mode } = useMode()
@@ -115,7 +114,6 @@ export default function HomePage() {
           <div className="flex-1">
             <WheelNavigation sections={lawSections} />
           </div>
-          <LawFixedFooter />
         </div>
       )}
     </main>

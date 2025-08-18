@@ -122,4 +122,20 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Force full-width layout and remove any potential margins in fullscreen */
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    overflow-x: hidden;
+  }
+
+  /* Ensure navigation reaches absolute edge */
+  header {
+    width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 }

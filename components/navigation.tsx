@@ -20,12 +20,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Search, User, Heart, Settings, LogOut, MessageCircle } from "lucide-react"
-import { ModeToggle } from "@/components/mode-toggle"
+import { Search, User, Heart, Settings, LogOut, MessageCircle, Scale, Gavel } from "lucide-react"
 import { useMode } from "@/contexts/mode-context"
 
 export function Navigation() {
-  const { mode } = useMode()
+  const { mode, setMode } = useMode()
 
   // Mock user state - in real app this would come from auth context
   const isLoggedIn = true
@@ -47,27 +46,53 @@ export function Navigation() {
     document.getElementById("wechat-section")?.scrollIntoView({ behavior: "smooth" })
   }
 
+  const handleFreeConsultationClick = () => {
+    const contactSection = document.querySelector('[data-section="contact"]')
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
     <header className="sticky top-0 z-50 w-full bg-background">
       <div className="border-b bg-muted/30">
-        <div className="container mx-auto flex h-12 items-center justify-end px-4">
-          <div className="flex items-center space-x-3">
+        <div className="w-full flex h-10 items-center relative">
+          <div className="absolute right-0 top-0 bottom-0 flex items-center pr-0">
             <Button
               variant="outline"
               size="sm"
               onClick={handleWeChatClick}
-              className="flex items-center space-x-2 bg-transparent border-muted-foreground/20"
+              className="flex items-center space-x-1 bg-transparent border-muted-foreground/20 h-8 px-3 text-xs mr-2"
             >
-              <MessageCircle className="h-4 w-4" />
+              <MessageCircle className="h-3 w-3" />
               <span>关注微信</span>
             </Button>
-            <ModeToggle />
+
+            <Button
+              variant={mode === "auction" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setMode("auction")}
+              className="flex items-center space-x-1 h-8 px-3 text-xs"
+            >
+              <Gavel className="h-3 w-3" />
+              <span>拍卖行</span>
+            </Button>
+
+            <Button
+              variant={mode === "law" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setMode("law")}
+              className="flex items-center space-x-1 h-8 px-3 text-xs"
+            >
+              <Scale className="h-3 w-3" />
+              <span>律师事务所</span>
+            </Button>
           </div>
         </div>
       </div>
 
       <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4">
+        <div className="container mx-auto flex h-16 items-center justify-between px-4 relative">
           <Link href="/" className="flex items-center space-x-3">
             <div className="flex flex-col">
               <div className="text-lg font-bold text-foreground">
@@ -85,6 +110,7 @@ export function Navigation() {
                 <Link
                   href="/"
                   className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                  style={{ minWidth: "60px" }}
                 >
                   首页
                 </Link>
@@ -94,17 +120,26 @@ export function Navigation() {
                 <button
                   onClick={handleAboutClick}
                   className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                  style={{ minWidth: "80px" }}
                 >
                   关于我们
                 </button>
               </NavigationMenuItem>
 
-              {mode === "auction" ? (
-                <>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger>拍卖会</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <div className="grid gap-3 p-6 w-[400px]">
+              <NavigationMenuItem>
+                {mode === "auction" ? (
+                  <NavigationMenuTrigger className="h-10 px-4 py-2" style={{ minWidth: "80px" }}>
+                    拍卖会
+                  </NavigationMenuTrigger>
+                ) : (
+                  <NavigationMenuTrigger className="h-10 px-4 py-2" style={{ minWidth: "80px" }}>
+                    专业领域
+                  </NavigationMenuTrigger>
+                )}
+                <NavigationMenuContent>
+                  <div className="grid gap-3 p-6 w-[400px]">
+                    {mode === "auction" ? (
+                      <>
                         <NavigationMenuLink asChild>
                           <Link
                             href="/auctions/featured"
@@ -127,106 +162,131 @@ export function Navigation() {
                             </p>
                           </Link>
                         </NavigationMenuLink>
-                      </div>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger>艺术品分类</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <div className="grid gap-3 p-6 w-[400px]">
+                      </>
+                    ) : (
+                      <>
                         <NavigationMenuLink asChild>
-                          <Link
-                            href="/categories/real-estate"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium leading-none">房地产</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              住宅、商业地产拍卖
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/categories/calligraphy-painting"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium leading-none">书画</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              中国书法、绘画作品
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </div>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                </>
-              ) : (
-                <>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger>专业领域</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <div className="grid gap-3 p-6 w-[400px]">
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/practice/corporate"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                          <button
+                            onClick={() => {
+                              const practiceSection = document.querySelector('[data-section="practice"]')
+                              if (practiceSection) {
+                                practiceSection.scrollIntoView({ behavior: "smooth" })
+                              }
+                            }}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground text-left w-full"
                           >
                             <div className="text-sm font-medium leading-none">公司法务</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               企业设立、合规、并购重组
                             </p>
-                          </Link>
+                          </button>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
-                          <Link
-                            href="/practice/litigation"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                          <button
+                            onClick={() => {
+                              const practiceSection = document.querySelector('[data-section="practice"]')
+                              if (practiceSection) {
+                                practiceSection.scrollIntoView({ behavior: "smooth" })
+                              }
+                            }}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground text-left w-full"
                           >
                             <div className="text-sm font-medium leading-none">诉讼仲裁</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               民商事诉讼、仲裁代理
                             </p>
-                          </Link>
+                          </button>
                         </NavigationMenuLink>
-                      </div>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
+                      </>
+                    )}
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-                  <NavigationMenuItem>
-                    <Link
-                      href="/lawyers"
-                      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
-                    >
-                      律师团队
-                    </Link>
-                  </NavigationMenuItem>
+              <NavigationMenuItem>
+                {mode === "auction" ? (
+                  <NavigationMenuTrigger className="h-10 px-4 py-2" style={{ minWidth: "90px" }}>
+                    艺术品分类
+                  </NavigationMenuTrigger>
+                ) : (
+                  <button
+                    onClick={() => {
+                      const teamSection = document.querySelector('[data-section="team"]')
+                      if (teamSection) {
+                        teamSection.scrollIntoView({ behavior: "smooth" })
+                      }
+                    }}
+                    className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                    style={{ minWidth: "90px" }}
+                  >
+                    律师团队
+                  </button>
+                )}
+                {mode === "auction" && (
+                  <NavigationMenuContent>
+                    <div className="grid gap-3 p-6 w-[400px]">
+                      <NavigationMenuLink asChild>
+                        <Link
+                          href="/categories/real-estate"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">房地产</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">住宅、商业地产拍卖</p>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          href="/categories/calligraphy-painting"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">书画</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">中国书法、绘画作品</p>
+                        </Link>
+                      </NavigationMenuLink>
+                    </div>
+                  </NavigationMenuContent>
+                )}
+              </NavigationMenuItem>
 
-                  <NavigationMenuItem>
-                    <Link
-                      href="/news"
-                      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
-                    >
-                      新闻动态
-                    </Link>
-                  </NavigationMenuItem>
-                </>
+              {mode === "law" && (
+                <NavigationMenuItem>
+                  <button
+                    onClick={() => {
+                      const cultureSection = document.querySelector('[data-section="culture"]')
+                      if (cultureSection) {
+                        cultureSection.scrollIntoView({ behavior: "smooth" })
+                      }
+                    }}
+                    className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                    style={{ minWidth: "80px" }}
+                  >
+                    新闻动态
+                  </button>
+                </NavigationMenuItem>
               )}
 
               <NavigationMenuItem>
-                <Link
-                  href="/contact"
+                <button
+                  onClick={() => {
+                    const contactSection = document.querySelector('[data-section="contact"]')
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: "smooth" })
+                    }
+                  }}
                   className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                  style={{ minWidth: "80px" }}
                 >
                   联系我们
-                </Link>
+                </button>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
 
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-4 pr-16">
             {mode === "law" ? (
-              <Button className="bg-black hover:bg-gray-800 text-white px-6">免费咨询</Button>
+              <Button className="bg-black hover:bg-gray-800 text-white px-6" onClick={handleFreeConsultationClick}>
+                免费咨询
+              </Button>
             ) : (
               <>
                 <div className="relative hidden sm:block">
@@ -238,7 +298,9 @@ export function Navigation() {
                 </Button>
               </>
             )}
+          </div>
 
+          <div className="absolute right-2 top-1/2 -translate-y-1/2">
             {isLoggedIn ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
