@@ -43,7 +43,7 @@ export default function ContactSection({ showContactInfo = true, showBusinessHou
               <h4 className="font-semibold text-gray-900 mb-4 text-xl">位置地图</h4>
               <div className="bg-white p-4 rounded-lg border">
                 <iframe
-                  src="https://map.baidu.com/search/上海市杨浦区长阳路2592号/@13515139.17,3661463.67,19z?querytype=s&da_src=shareurl&wd=上海市杨浦区长阳路2592号&c=289&src=0&pn=0&sug=0&l=12&b=(13514139,3660463;13516139,3662463)&from=webmap&biz_forward=%7B%22scaler%22:1,%22styles%22:%22pl%22%7D"
+                  src="https://map.baidu.com/search/上海市杨浦区长阳路2592号电力科技园一楼/@13515139.17,3661463.67,17z?querytype=s&da_src=shareurl&wd=上海市杨浦区长阳路2592号电力科技园一楼&c=289&src=0&pn=0&sug=0&l=17&from=webmap&biz_forward=%7B%22scaler%22:1,%22styles%22:%22pl%22%7D&device_ratio=1"
                   width="100%"
                   height="450"
                   style={{ border: 0 }}
