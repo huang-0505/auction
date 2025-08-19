@@ -4,7 +4,6 @@ import { Navigation } from "@/components/navigation"
 import { HeroCarousel } from "@/components/hero-carousel"
 import { FeaturedAuctions } from "@/components/featured-auctions"
 import ContactSection from "@/components/contact-section"
-import { WeChatSection } from "@/components/wechat-section"
 import { useMode } from "@/contexts/mode-context"
 import { WheelNavigation } from "@/components/wheel-navigation"
 import { LawHeroWheel } from "@/components/law-sections/law-hero-wheel"
@@ -62,7 +61,6 @@ export default function HomePage() {
           <div id="contact-section">
             <ContactSection showContactInfo={false} showBusinessHours={false} />
           </div>
-          <WeChatSection />
 
           {/* Footer */}
           <footer className="bg-card border-t py-12">
@@ -96,7 +94,8 @@ export default function HomePage() {
                 <div>
                   <h4 className="font-semibold mb-4">联系我们</h4>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>客服热线: 021-35070008</li>
+                    <li>客服热线: 021-35303599</li>
+                    <li>       : 021-35070008</li>
                     <li>邮箱: J@jhsen.com</li>
                     <li>地址: 杨浦区长阳路2592号电力科技园一楼</li>
                   </ul>

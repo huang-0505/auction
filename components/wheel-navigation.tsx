@@ -57,6 +57,7 @@ export function WheelNavigation({ sections }: WheelNavigationProps) {
               <div>
                 <h4 className="font-semibold mb-4">联系我们</h4>
                 <ul className="space-y-2 text-gray-600">
+                  <li>客服热线: 021-35303599</li>
                   <li>客服热线: 021-35070008</li>
                   <li>邮箱: J@jhsen.com</li>
                   <li>地址: 杨浦区长阳路2592号电力科技园一楼</li>

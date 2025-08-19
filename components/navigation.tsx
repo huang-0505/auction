@@ -20,7 +20,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Search, User, Heart, Settings, LogOut, MessageCircle, Scale, Gavel } from "lucide-react"
+import { Search, User, Heart, Settings, LogOut, Scale, Gavel } from "lucide-react"
 import { useMode } from "@/contexts/mode-context"
 
 export function Navigation() {
@@ -42,15 +42,15 @@ export function Navigation() {
     document.getElementById("featured-auctions")?.scrollIntoView({ behavior: "smooth" })
   }
 
-  const handleWeChatClick = () => {
-    document.getElementById("wechat-section")?.scrollIntoView({ behavior: "smooth" })
-  }
-
   const handleFreeConsultationClick = () => {
     const contactSection = document.querySelector('[data-section="contact"]')
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" })
     }
+  }
+
+  const handleWeChatClick = () => {
+    document.getElementById("wechat-section")?.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
@@ -62,9 +62,8 @@ export function Navigation() {
               variant="outline"
               size="sm"
               onClick={handleWeChatClick}
-              className="flex items-center space-x-1 bg-transparent border-muted-foreground/20 h-8 px-3 text-xs mr-2"
+              className="flex items-center space-x-1 h-8 px-3 text-xs mr-2 bg-transparent"
             >
-              <MessageCircle className="h-3 w-3" />
               <span>关注微信</span>
             </Button>
 

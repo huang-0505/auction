@@ -37,6 +37,7 @@ export function LawFooterWheel() {
           <div>
             <h3 className="text-xl font-bold text-foreground mb-4">联系我们</h3>
             <div className="space-y-2 text-sm text-muted-foreground">
+              <p>客服热线: 021-35303599</p>
               <p>客服热线: 021-35070008</p>
               <p>邮箱: J@jhsen.com</p>
               <p>地址: 杨浦区长阳路2592号电力科技园一楼</p>
