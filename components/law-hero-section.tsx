@@ -32,7 +32,7 @@ export function LawHeroSection() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button size="lg" className="px-8" onClick={scrollToConsultation}>
-              免费咨询
+              咨询
             </Button>
             <Button variant="outline" size="lg" className="px-8 bg-transparent" onClick={scrollToAbout}>
               了解更多

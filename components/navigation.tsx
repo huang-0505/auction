@@ -316,7 +316,7 @@ export function Navigation() {
           <div className="flex items-center space-x-4 pr-16">
             {mode === "law" ? (
               <Button className="bg-black hover:bg-gray-800 text-white px-6" onClick={handleFreeConsultationClick}>
-                免费咨询
+                咨询
               </Button>
             ) : (
               <>
