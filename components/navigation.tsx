@@ -110,14 +110,13 @@ export function Navigation() {
             </Button>
 
             <Button
-              variant="outline"
+              variant={mode === "law" ? "default" : "outline"}
               size="sm"
-              onClick={handleLawFirmClick}
-              className="flex items-center space-x-1 h-8 px-3 text-xs opacity-60 cursor-not-allowed bg-transparent"
-              disabled
+              onClick={() => setMode("law")}
+              className="flex items-center space-x-1 h-8 px-3 text-xs"
             >
               <Scale className="h-3 w-3" />
-              <span>律师事务所 (暂未开放)</span>
+              <span>律师事务所</span>
             </Button>
           </div>
         </div>
