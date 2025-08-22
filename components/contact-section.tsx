@@ -74,7 +74,7 @@ export default function ContactSection({ showContactInfo = true, showBusinessHou
                 </div>
               </div>
 
-              <div>
+              <div id="wechat-qr-section">
                 <h4 className="font-semibold text-gray-900 mb-4 text-xl">关注微信</h4>
                 <div className="bg-white p-6 rounded-lg border text-center h-full flex flex-col justify-center">
                   <div className="mb-3">

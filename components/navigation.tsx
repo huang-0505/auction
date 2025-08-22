@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -22,9 +24,13 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Search, User, Heart, Settings, LogOut, Scale, Gavel } from "lucide-react"
 import { useMode } from "@/contexts/mode-context"
+import { useState } from "react"
 
 export function Navigation() {
   const { mode, setMode } = useMode()
+
+  const [searchQuery, setSearchQuery] = useState("")
+  const [favorites, setFavorites] = useState<string[]>([])
 
   // Mock user state - in real app this would come from auth context
   const isLoggedIn = true
@@ -35,7 +41,7 @@ export function Navigation() {
   }
 
   const handleAboutClick = () => {
-    document.getElementById("contact-section")?.scrollIntoView({ behavior: "smooth" })
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
   }
 
   const handleAuctionsClick = () => {
@@ -43,14 +49,36 @@ export function Navigation() {
   }
 
   const handleFreeConsultationClick = () => {
-    const contactSection = document.querySelector('[data-section="contact"]')
+    const contactSection = document.getElementById("contact")
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" })
     }
   }
 
   const handleWeChatClick = () => {
-    document.getElementById("wechat-section")?.scrollIntoView({ behavior: "smooth" })
+    const wechatSection = document.getElementById("wechat-qr-section")
+    if (wechatSection) {
+      wechatSection.scrollIntoView({ behavior: "smooth", block: "center" })
+    }
+  }
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (searchQuery.trim()) {
+      // In a real app, this would navigate to search results page
+      alert(`搜索: ${searchQuery}`)
+      // You could implement: router.push(`/search?q=${encodeURIComponent(searchQuery)}`)
+    }
+  }
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value)
+  }
+
+  const handleFavoritesClick = () => {
+    // In a real app, this would show favorites page or dropdown
+    alert("查看收藏夹 - 您收藏了 " + favorites.length + " 件拍品")
+    // You could implement: router.push('/favorites')
   }
 
   return (
@@ -267,7 +295,7 @@ export function Navigation() {
               <NavigationMenuItem>
                 <button
                   onClick={() => {
-                    const contactSection = document.querySelector('[data-section="contact"]')
+                    const contactSection = document.getElementById("contact")
                     if (contactSection) {
                       contactSection.scrollIntoView({ behavior: "smooth" })
                     }
@@ -288,11 +316,17 @@ export function Navigation() {
               </Button>
             ) : (
               <>
-                <div className="relative hidden sm:block">
+                <form onSubmit={handleSearch} className="relative hidden sm:block">
                   <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                  <Input type="search" placeholder="搜索拍品" className="w-48 pl-10 pr-4 h-9" />
-                </div>
-                <Button variant="ghost" size="icon">
+                  <Input
+                    type="search"
+                    placeholder="搜索拍品"
+                    className="w-48 pl-10 pr-4 h-9"
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                  />
+                </form>
+                <Button variant="ghost" size="icon" onClick={handleFavoritesClick} title="收藏夹">
                   <Heart className="h-4 w-4" />
                 </Button>
               </>
