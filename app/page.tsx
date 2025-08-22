@@ -11,7 +11,7 @@ import { LawPracticeWheel } from "@/components/law-sections/law-practice-wheel"
 import { LawTeamWheel } from "@/components/law-sections/law-team-wheel"
 import { LawCultureWheel } from "@/components/law-sections/law-culture-wheel"
 import { LawContactWheel } from "@/components/law-sections/law-contact-wheel"
-import { LawClosedMessage } from "@/components/law-closed-message"
+import { LawClosedNotice } from "@/components/law-closed-notice"
 
 export default function HomePage() {
   const { mode } = useMode()
@@ -51,9 +51,10 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen">
+      <Navigation />
+
       {mode === "auction" ? (
         <>
-          <Navigation />
           <HeroCarousel />
           <div id="featured-auctions">
             <FeaturedAuctions />
@@ -109,10 +110,7 @@ export default function HomePage() {
           </footer>
         </>
       ) : (
-        <div className="min-h-screen flex flex-col">
-          <Navigation />
-          <LawClosedMessage />
-        </div>
+        <LawClosedNotice />
       )}
     </main>
   )
