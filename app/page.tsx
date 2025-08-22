@@ -5,13 +5,13 @@ import { HeroCarousel } from "@/components/hero-carousel"
 import { FeaturedAuctions } from "@/components/featured-auctions"
 import ContactSection from "@/components/contact-section"
 import { useMode } from "@/contexts/mode-context"
-import { WheelNavigation } from "@/components/wheel-navigation"
 import { LawHeroWheel } from "@/components/law-sections/law-hero-wheel"
 import { LawAboutWheel } from "@/components/law-sections/law-about-wheel"
 import { LawPracticeWheel } from "@/components/law-sections/law-practice-wheel"
 import { LawTeamWheel } from "@/components/law-sections/law-team-wheel"
 import { LawCultureWheel } from "@/components/law-sections/law-culture-wheel"
 import { LawContactWheel } from "@/components/law-sections/law-contact-wheel"
+import { LawClosedMessage } from "@/components/law-closed-message"
 
 export default function HomePage() {
   const { mode } = useMode()
@@ -95,7 +95,7 @@ export default function HomePage() {
                   <h4 className="font-semibold mb-4">联系我们</h4>
                   <ul className="space-y-2 text-muted-foreground">
                     <li>客服热线: 021-35303599</li>
-                    <li>       : 021-35070008</li>
+                    <li> : 021-35070008</li>
                     <li>邮箱: J@jhsen.com</li>
                     <li>地址: 杨浦区长阳路2592号电力科技园一楼</li>
                   </ul>
@@ -110,9 +110,8 @@ export default function HomePage() {
         </>
       ) : (
         <div className="min-h-screen flex flex-col">
-          <div className="flex-1">
-            <WheelNavigation sections={lawSections} />
-          </div>
+          <Navigation />
+          <LawClosedMessage />
         </div>
       )}
     </main>

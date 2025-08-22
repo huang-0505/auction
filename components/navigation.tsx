@@ -81,6 +81,10 @@ export function Navigation() {
     // You could implement: router.push('/favorites')
   }
 
+  const handleLawFirmClick = () => {
+    alert("律师事务所暂时未开放，敬请期待！")
+  }
+
   return (
     <header className="sticky top-0 z-50 w-full bg-background">
       <div className="border-b bg-muted/30">
@@ -106,13 +110,14 @@ export function Navigation() {
             </Button>
 
             <Button
-              variant={mode === "law" ? "default" : "outline"}
+              variant="outline"
               size="sm"
-              onClick={() => setMode("law")}
-              className="flex items-center space-x-1 h-8 px-3 text-xs"
+              onClick={handleLawFirmClick}
+              className="flex items-center space-x-1 h-8 px-3 text-xs opacity-60 cursor-not-allowed bg-transparent"
+              disabled
             >
               <Scale className="h-3 w-3" />
-              <span>律师事务所</span>
+              <span>律师事务所 (暂未开放)</span>
             </Button>
           </div>
         </div>
