@@ -40,10 +40,6 @@ export function Navigation() {
     avatar: "/user-avatar.png",
   }
 
-  const handleAboutClick = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-  }
-
   const handleAuctionsClick = () => {
     document.getElementById("featured-auctions")?.scrollIntoView({ behavior: "smooth" })
   }
@@ -144,13 +140,13 @@ export function Navigation() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <button
-                  onClick={handleAboutClick}
+                <Link
+                  href="/about"
                   className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
                   style={{ minWidth: "80px" }}
                 >
                   关于我们
-                </button>
+                </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
@@ -313,18 +309,13 @@ export function Navigation() {
               )}
 
               <NavigationMenuItem>
-                <button
-                  onClick={() => {
-                    const contactSection = document.getElementById("contact")
-                    if (contactSection) {
-                      contactSection.scrollIntoView({ behavior: "smooth" })
-                    }
-                  }}
+                <Link
+                  href="/contact"
                   className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
                   style={{ minWidth: "80px" }}
                 >
                   联系我们
-                </button>
+                </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
