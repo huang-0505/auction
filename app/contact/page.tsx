@@ -1,13 +1,17 @@
+"use client"
+
 import { Navigation } from "@/components/navigation"
 import ContactSection from "@/components/contact-section"
+import { LawContactWheel } from "@/components/law-sections/law-contact-wheel"
+import { useMode } from "@/contexts/mode-context"
 
 export default function ContactPage() {
+  const { mode } = useMode()
+
   return (
     <main className="min-h-screen">
       <Navigation />
-      <div className="pt-8">
-        <ContactSection />
-      </div>
+      <div className="pt-8">{mode === "law" ? <LawContactWheel /> : <ContactSection />}</div>
 
       {/* Footer */}
       <footer className="bg-card border-t py-12">
@@ -15,9 +19,15 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="text-2xl font-bold text-primary">金沪拍卖</div>
+                <div className="text-2xl font-bold text-primary">
+                  {mode === "auction" ? "金沪拍卖" : "上海金沪律师事务所"}
+                </div>
               </div>
-              <p className="text-muted-foreground">专业的艺术品拍卖平台，致力于为收藏家提供高品质的拍卖服务。</p>
+              <p className="text-muted-foreground">
+                {mode === "auction"
+                  ? "专业的艺术品拍卖平台，致力于为收藏家提供高品质的拍卖服务。"
+                  : "专业的法律服务机构，为客户提供全方位的法律解决方案。"}
+              </p>
             </div>
 
             <div>
@@ -50,7 +60,7 @@ export default function ContactPage() {
           </div>
 
           <div className="border-t mt-8 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 金沪拍卖. 保留所有权利.</p>
+            <p>&copy; 2024 {mode === "auction" ? "金沪拍卖" : "上海金沪律师事务所"}. 保留所有权利.</p>
           </div>
         </div>
       </footer>
