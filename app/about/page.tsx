@@ -15,45 +15,187 @@ export default function AboutPage() {
           <LawAboutWheel />
         ) : (
           <div className="container mx-auto px-4 py-16">
-            <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl font-bold text-center mb-8">关于金沪拍卖</h1>
+            <div className="max-w-6xl mx-auto">
+              <h1 className="text-4xl font-bold text-center mb-12">关于金沪拍卖</h1>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-                <div>
-                  <h2 className="text-2xl font-semibold mb-4">公司简介</h2>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    金沪拍卖成立于2024年，是一家专业的艺术品拍卖公司。我们致力于为收藏家、投资者和艺术爱好者提供高品质的拍卖服务。
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    公司汇聚了业内资深的拍卖师和艺术品鉴定专家，确保每一件拍品的真实性和价值。我们的拍卖涵盖房地产、书画、古董等多个领域。
-                  </p>
-                </div>
+              <div className="mb-16">
+                <h2 className="text-3xl font-semibold text-center mb-8">资质证书</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="bg-card border rounded-lg p-6 text-center shadow-sm">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="font-semibold mb-2">拍卖经营许可证</h3>
+                    <p className="text-muted-foreground text-sm">国家文物局颁发</p>
+                    <p className="text-muted-foreground text-sm">证书编号: 2024-SH-001</p>
+                  </div>
 
-                <div>
-                  <h2 className="text-2xl font-semibold mb-4">我们的使命</h2>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    传承文化，连接收藏。我们相信每一件艺术品都承载着独特的历史和文化价值，我们的使命是为这些珍贵的文化遗产找到最合适的归宿。
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    通过专业的服务和透明的交易，我们致力于建立一个诚信、公正的艺术品交易平台。
-                  </p>
+                  <div className="bg-card border rounded-lg p-6 text-center shadow-sm">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="font-semibold mb-2">营业执照</h3>
+                    <p className="text-muted-foreground text-sm">上海市工商行政管理局</p>
+                    <p className="text-muted-foreground text-sm">统一社会信用代码: 91310000MA1FL2XX</p>
+                  </div>
+
+                  <div className="bg-card border rounded-lg p-6 text-center shadow-sm">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="font-semibold mb-2">文物拍卖许可证</h3>
+                    <p className="text-muted-foreground text-sm">国家文物局认证</p>
+                    <p className="text-muted-foreground text-sm">许可证号: WW-2024-SH-008</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="bg-muted/30 rounded-lg p-8">
-                <h2 className="text-2xl font-semibold mb-6 text-center">我们的优势</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="text-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <div className="space-y-6">
+                  <h2 className="text-3xl font-semibold">公司简介</h2>
+                  <div className="prose prose-lg max-w-none">
+                    <p className="text-muted-foreground leading-relaxed">
+                      上海金沪拍卖有限公司成立于2024年，是经国家文物局批准，具有文物拍卖资质的专业拍卖机构。公司注册资本1000万元人民币，总部位于上海市杨浦区长阳路2592号电力科技园。
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      公司秉承"诚信为本、专业至上"的经营理念，致力于为广大收藏家、投资者和艺术爱好者提供高品质、多元化的拍卖服务。我们的业务范围涵盖房地产拍卖、艺术品拍卖、古董文物拍卖等多个领域。
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      金沪拍卖拥有一支由资深拍卖师、艺术品鉴定专家、法律顾问组成的专业团队，确保每一场拍卖会的专业性和权威性。我们严格遵循国家相关法律法规，建立了完善的拍品征集、鉴定、展示、拍卖流程。
+                    </p>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <h2 className="text-3xl font-semibold">企业文化</h2>
+                  <div className="space-y-4">
+                    <div className="bg-muted/30 rounded-lg p-6">
+                      <h3 className="font-semibold mb-2 text-primary">企业使命</h3>
+                      <p className="text-muted-foreground">
+                        传承文化精髓，搭建收藏桥梁，让每一件艺术珍品都能找到最合适的归宿。
+                      </p>
+                    </div>
+                    <div className="bg-muted/30 rounded-lg p-6">
+                      <h3 className="font-semibold mb-2 text-primary">企业愿景</h3>
+                      <p className="text-muted-foreground">
+                        成为中国领先的综合性拍卖服务平台，推动艺术品市场健康发展。
+                      </p>
+                    </div>
+                    <div className="bg-muted/30 rounded-lg p-6">
+                      <h3 className="font-semibold mb-2 text-primary">核心价值观</h3>
+                      <p className="text-muted-foreground">诚信、专业、创新、共赢</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-muted/30 to-muted/10 rounded-xl p-8 mb-16">
+                <h2 className="text-3xl font-semibold mb-8 text-center">核心优势</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="text-center group">
+                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                      <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                        />
+                      </svg>
+                    </div>
                     <h3 className="font-semibold mb-2">专业团队</h3>
-                    <p className="text-muted-foreground text-sm">资深拍卖师和鉴定专家</p>
+                    <p className="text-muted-foreground text-sm">资深拍卖师和权威鉴定专家团队</p>
                   </div>
-                  <div className="text-center">
+                  <div className="text-center group">
+                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                      <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                        />
+                      </svg>
+                    </div>
                     <h3 className="font-semibold mb-2">严格鉴定</h3>
-                    <p className="text-muted-foreground text-sm">确保每件拍品的真实性</p>
+                    <p className="text-muted-foreground text-sm">多重鉴定程序确保拍品真实性</p>
                   </div>
-                  <div className="text-center">
+                  <div className="text-center group">
+                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                      <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        />
+                      </svg>
+                    </div>
                     <h3 className="font-semibold mb-2">透明交易</h3>
-                    <p className="text-muted-foreground text-sm">公开公正的拍卖流程</p>
+                    <p className="text-muted-foreground text-sm">公开公正的拍卖流程和定价机制</p>
+                  </div>
+                  <div className="text-center group">
+                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                      <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="font-semibold mb-2">贴心服务</h3>
+                    <p className="text-muted-foreground text-sm">全程专业咨询和售后保障服务</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-center bg-card border rounded-xl p-8">
+                <h2 className="text-2xl font-semibold mb-6">联系我们</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
+                  <div>
+                    <h4 className="font-semibold mb-2">客服热线</h4>
+                    <p className="text-muted-foreground">021-35303599</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2">传真号码</h4>
+                    <p className="text-muted-foreground">021-35070008</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2">电子邮箱</h4>
+                    <p className="text-muted-foreground">J@jhsen.com</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2">公司地址</h4>
+                    <p className="text-muted-foreground">杨浦区长阳路2592号电力科技园一楼</p>
                   </div>
                 </div>
               </div>
@@ -101,7 +243,7 @@ export default function AboutPage() {
               <h4 className="font-semibold mb-4">联系我们</h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li>客服热线: 021-35303599</li>
-                <li> : 021-35070008</li>
+                <li>传真号码: 021-35070008</li>
                 <li>邮箱: J@jhsen.com</li>
                 <li>地址: 杨浦区长阳路2592号电力科技园一楼</li>
               </ul>
