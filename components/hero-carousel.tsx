@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
+import Link from "next/link"
 
 const slides = [
   {
@@ -13,6 +14,8 @@ const slides = [
     image: "/yangpu-sunrise-view.png",
     primaryButton: "了解我们",
     secondaryButton: "联系我们",
+    primaryLink: "/about",
+    secondaryLink: "/contact",
   },
   {
     id: 2,
@@ -22,6 +25,8 @@ const slides = [
     image: "/real-estate-auction.png",
     primaryButton: "查看房产",
     secondaryButton: "拍卖日程",
+    primaryLink: "/categories/real-estate",
+    secondaryLink: "/auctions/upcoming",
   },
   {
     id: 3,
@@ -31,6 +36,8 @@ const slides = [
     image: "/calligraphy-painting.png",
     primaryButton: "浏览拍卖会",
     secondaryButton: "艺术鉴赏",
+    primaryLink: "/auctions",
+    secondaryLink: "/categories/calligraphy-painting",
   },
 ]
 
@@ -86,17 +93,21 @@ export function HeroCarousel() {
                 <h2 className="text-2xl md:text-3xl mb-6 text-white/90 font-light">{slide.subtitle}</h2>
                 <p className="text-lg md:text-xl mb-8 text-white/80 leading-relaxed max-w-xl">{slide.description}</p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="text-lg px-8 py-6 bg-white text-black hover:bg-white/90">
-                    {slide.primaryButton}
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="text-lg px-8 py-6 bg-transparent border-white/50 text-white hover:bg-white/10"
-                  >
-                    {slide.secondaryButton}
-                  </Button>
+                  <Link href={slide.primaryLink}>
+                    <Button size="lg" className="text-lg px-8 py-6 bg-white text-black hover:bg-white/90">
+                      {slide.primaryButton}
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                  </Link>
+                  <Link href={slide.secondaryLink}>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="text-lg px-8 py-6 bg-transparent border-white/50 text-white hover:bg-white/10"
+                    >
+                      {slide.secondaryButton}
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
