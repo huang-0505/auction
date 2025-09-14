@@ -3,6 +3,7 @@
 import { Navigation } from "@/components/navigation"
 import { LawAboutWheel } from "@/components/law-sections/law-about-wheel"
 import { useMode } from "@/contexts/mode-context"
+import Link from "next/link"
 
 export default function AboutPage() {
   const { mode } = useMode()
@@ -40,6 +41,18 @@ export default function AboutPage() {
                     <p className="text-muted-foreground text-sm">第159438866号</p>
                     <p className="text-muted-foreground text-sm">注册人：上海金沪拍卖有限公司</p>
                   </div>
+                </div>
+
+                <div className="text-center mt-8">
+                  <Link
+                    href="/about/certificates"
+                    className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+                  >
+                    查看更多资质与荣誉
+                    <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
                 </div>
               </div>
 
