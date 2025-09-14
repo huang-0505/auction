@@ -20,54 +20,56 @@ export default function AboutPage() {
 
               <div className="mb-16">
                 <h2 className="text-3xl font-semibold text-center mb-8">资质证书</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                   <div className="bg-card border rounded-lg p-6 text-center shadow-sm">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                    </div>
-                    <h3 className="font-semibold mb-2">拍卖经营许可证</h3>
-                    <p className="text-muted-foreground text-sm">国家文物局颁发</p>
-                    <p className="text-muted-foreground text-sm">证书编号: 2024-SH-001</p>
-                  </div>
-
-                  <div className="bg-card border rounded-lg p-6 text-center shadow-sm">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                        />
-                      </svg>
-                    </div>
-                    <h3 className="font-semibold mb-2">营业执照</h3>
-                    <p className="text-muted-foreground text-sm">上海市工商行政管理局</p>
-                    <p className="text-muted-foreground text-sm">统一社会信用代码: 91310000MA1FL2XX</p>
-                  </div>
-
-                  <div className="bg-card border rounded-lg p-6 text-center shadow-sm">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                        />
-                      </svg>
-                    </div>
+                    <img
+                      src="/cultural-relics-permit.png"
+                      alt="文物拍卖许可证"
+                      className="w-full h-auto rounded-lg mb-4"
+                    />
                     <h3 className="font-semibold mb-2">文物拍卖许可证</h3>
-                    <p className="text-muted-foreground text-sm">国家文物局认证</p>
-                    <p className="text-muted-foreground text-sm">许可证号: WW-2024-SH-008</p>
+                    <p className="text-muted-foreground text-sm">中华人民共和国</p>
+                    <p className="text-muted-foreground text-sm">沪文物拍字（2016）第13044号</p>
+                    <p className="text-muted-foreground text-sm">有效期至：2026-07-31</p>
                   </div>
+
+                  <div className="bg-card border rounded-lg p-6 text-center shadow-sm">
+                    <img src="/trademark-certificate.png" alt="商标注册证" className="w-full h-auto rounded-lg mb-4" />
+                    <h3 className="font-semibold mb-2">商标注册证</h3>
+                    <p className="text-muted-foreground text-sm">金沪 JINHU</p>
+                    <p className="text-muted-foreground text-sm">第159438866号</p>
+                    <p className="text-muted-foreground text-sm">注册人：上海金沪拍卖有限公司</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mb-16">
+                <h2 className="text-3xl font-semibold mb-8">公司简介</h2>
+                <div className="prose prose-lg max-w-none space-y-6">
+                  <p className="text-muted-foreground leading-relaxed">
+                    上海金沪拍卖有限公司成立于2010年，由市场监督管理局批准成立，是集经营范围涵盖房地产、机动车、文物艺术品、产股权、罚没物资、金融不良资产、破产企业以及各类法人、自然人委托的有形、无形资产的拍卖业务于一体的高文化、高素质、执行力强、监管到位、生机勃勃、欣欣向荣的综合性年轻企业综合性企业，拥有固定办公场所、拍卖大厅、库房等，经营场地达1000平方米。
+                  </p>
+
+                  <p className="text-muted-foreground leading-relaxed">
+                    通过我司不懈的努力及全体员工的精诚合作，我司已具有中国拍卖协会的AAA资质，上海拍卖协会AAAAA资质，重合同守信用AAA企业，公务罚没资质等资质。我司主要承担各类房地产、物资、艺术品、机动车等拍卖活动。目前公司已成为上海司法拍卖、海关拍卖、上海农交所、上海国际港务（集团）股份有限公司、上海海运局等机关和国企的入围拍卖单位、以及中国工商银行股份有限公司上海市分行、中国信达资产管理股份有限公司上海市分公司、上海破产管理人协会、上汽集团等指定的拍卖单位。上海金沪律师事务所作为本公司常年的法律顾问单位，确保公司在各方面依法开展业务活动。
+                  </p>
+
+                  <p className="text-muted-foreground leading-relaxed">
+                    公司办公场地1000平方米，设置了五部一室，其中综合业务部下设留个部门，六个部门中的艺术品部专门根据其特殊性，设立了库房。各部门分工合作，密切配合，共同完成拍卖业务。在公司领导及公司项目部的坚强支持下，经过多年的工作实践和稳步发展，公司在资质、业务等方面都取得了较大的突破。在2011年获得合同信用A级证书，但这并不是我们的终点，公司在接下来的13年获得合同信用AA级证书，在2014年至2015年持续保持,并且获得上海市守合同重信用企业证书。2020年度以来持续获得合同信用AAA级证书，并且为守合同重信用企业。
+                  </p>
+
+                  <p className="text-muted-foreground leading-relaxed">
+                    同时也不断的完善提高自己，在2013年的6月向慈善基金会捐赠《山高水长》国画用于慈善事业，支持慈善事业。在2014年，公司通过认真踏实并合理的规章制度在2014加入中国拍卖行业协会会员并且在2017年的年末我司被评为"上海市拍卖企业信用资质等级"4A级拍卖企业。不仅如此，我公司荣获2015年度信息统计工作先进单位，在之后公司又被评为2015-2016年度"上海市公物罚没物资拍卖企业"。同时，我司也适应新形势，勇于开拓新的拍卖模式，互联网+的拍卖模式已在我司充分运用。
+                  </p>
+
+                  <p className="text-muted-foreground leading-relaxed">
+                    每场预展、拍卖会全程录像，每个拍品都有照片和文字资料，通过公司网络和二维码即可搜索、查询和咨询，并且拥有专业的拍卖易胜网、微信公众号，微博，腾讯QQ，企业邮箱，指定报刊等信息发布平台，每年荣获上海市拍卖行业协会颁发的"创新进步奖"。之后我司于2017年也加入了上海联合产权交易所拍卖会员。
+                  </p>
+
+                  <p className="text-muted-foreground leading-relaxed">
+                    我司紧紧围绕「金诚致远 ·
+                    沪守正衡」的文化理念，用诚信、优质、高效、完善的服务，为拍卖业务的各方当事人提供专业而便捷的服务平台。在严格遵守我国《拍卖法》等法律法规的基础之上，竭诚为社会各界提供服务，上海金沪拍卖有限公司将继续为拍卖行业的规范发展做出自己的贡献，力争发展成为国内具有一定影响力的拍卖公司。
+                  </p>
                 </div>
               </div>
 
