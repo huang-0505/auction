@@ -1,10 +1,7 @@
 "use client"
 
-import type React from "react"
-
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,50 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useMode } from "@/contexts/mode-context"
-import { useState } from "react"
-
-const SearchIcon = () => (
-  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <circle cx="11" cy="11" r="8" />
-    <path d="m21 21-4.35-4.35" />
-  </svg>
-)
-
-const UserIcon = () => (
-  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-    <circle cx="12" cy="7" r="4" />
-  </svg>
-)
-
-const HeartIcon = () => (
-  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-  </svg>
-)
-
-const SettingsIcon = () => (
-  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="3" />
-    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1" />
-  </svg>
-)
-
-const LogOutIcon = () => (
-  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path d="M9 2L3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6l-3-4H6L9 2zM3 6h18M8 11v6M16 11v6" />
-  </svg>
-)
 
 const ScaleIcon = () => (
   <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,17 +26,6 @@ const GavelIcon = () => (
 
 export function Navigation() {
   const { mode, setMode } = useMode()
-
-  const [searchQuery, setSearchQuery] = useState("")
-  const [favorites, setFavorites] = useState<string[]>([])
-
-  // Mock user state - in real app this would come from auth context
-  const isLoggedIn = true
-  const user = {
-    name: "张先生",
-    email: "zhang@example.com",
-    avatar: "/user-avatar.png",
-  }
 
   const handleAuctionsClick = () => {
     document.getElementById("featured-auctions")?.scrollIntoView({ behavior: "smooth" })
@@ -100,25 +43,6 @@ export function Navigation() {
     if (wechatSection) {
       wechatSection.scrollIntoView({ behavior: "smooth", block: "center" })
     }
-  }
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (searchQuery.trim()) {
-      // In a real app, this would navigate to search results page
-      alert(`搜索: ${searchQuery}`)
-      // You could implement: router.push(`/search?q=${encodeURIComponent(searchQuery)}`)
-    }
-  }
-
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value)
-  }
-
-  const handleFavoritesClick = () => {
-    // In a real app, this would show favorites page or dropdown
-    alert("查看收藏夹 - 您收藏了 " + favorites.length + " 件拍品")
-    // You could implement: router.push('/favorites')
   }
 
   return (
@@ -159,7 +83,7 @@ export function Navigation() {
       </div>
 
       <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4 relative">
+        <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Link href="/" className="flex items-center space-x-3">
             <div className="flex flex-col">
               <div className="text-lg font-bold text-foreground">
@@ -364,75 +288,13 @@ export function Navigation() {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <div className="flex items-center space-x-4 pr-16">
-            {mode === "law" ? (
+          {mode === "law" && (
+            <div className="flex items-center">
               <Button className="bg-black hover:bg-gray-800 text-white px-6" onClick={handleFreeConsultationClick}>
                 咨询
               </Button>
-            ) : (
-              <>
-                <form onSubmit={handleSearch} className="relative hidden sm:block">
-                  <SearchIcon />
-                  <Input
-                    type="search"
-                    placeholder="搜索拍品"
-                    className="w-48 pl-10 pr-4 h-9"
-                    value={searchQuery}
-                    onChange={handleSearchChange}
-                  />
-                </form>
-                <Button variant="ghost" size="icon" onClick={handleFavoritesClick} title="收藏夹">
-                  <HeartIcon />
-                </Button>
-              </>
-            )}
-          </div>
-
-          <div className="absolute right-2 top-1/2 -translate-y-1/2">
-            {isLoggedIn ? (
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-                    <Avatar className="h-8 w-8">
-                      <AvatarImage src={user.avatar || "/placeholder.svg"} alt={user.name} />
-                      <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
-                    </Avatar>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56" align="end" forceMount>
-                  <DropdownMenuLabel className="font-normal">
-                    <div className="flex flex-col space-y-1">
-                      <p className="text-sm font-medium leading-none">{user.name}</p>
-                      <p className="text-xs leading-none text-muted-foreground">{user.email}</p>
-                    </div>
-                  </DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem asChild>
-                    <Link href="/dashboard">
-                      <UserIcon />
-                      <span>个人中心</span>
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <SettingsIcon />
-                    <span>账户设置</span>
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>
-                    <LogOutIcon />
-                    <span>退出登录</span>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            ) : (
-              <Button variant="outline" size="sm" asChild>
-                <Link href="/auth/login">
-                  <UserIcon />
-                  登录
-                </Link>
-              </Button>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </header>
