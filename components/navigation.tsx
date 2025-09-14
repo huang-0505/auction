@@ -22,9 +22,53 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Search, User, Heart, Settings, LogOut, Scale, Gavel } from "lucide-react"
 import { useMode } from "@/contexts/mode-context"
 import { useState } from "react"
+
+const SearchIcon = () => (
+  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <circle cx="11" cy="11" r="8" />
+    <path d="m21 21-4.35-4.35" />
+  </svg>
+)
+
+const UserIcon = () => (
+  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+    <circle cx="12" cy="7" r="4" />
+  </svg>
+)
+
+const HeartIcon = () => (
+  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+  </svg>
+)
+
+const SettingsIcon = () => (
+  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="3" />
+    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1" />
+  </svg>
+)
+
+const LogOutIcon = () => (
+  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path d="M9 2L3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6l-3-4H6L9 2zM3 6h18M8 11v6M16 11v6" />
+  </svg>
+)
+
+const ScaleIcon = () => (
+  <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path d="M16 11V7a4 4 0 0 0-8 0v4M5 9h14l1 12H4L5 9z" />
+  </svg>
+)
+
+const GavelIcon = () => (
+  <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path d="M6 2L3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6l-3-4H6L6 2zM3 6h18M8 11v6M16 11v6" />
+  </svg>
+)
 
 export function Navigation() {
   const { mode, setMode } = useMode()
@@ -97,7 +141,7 @@ export function Navigation() {
               onClick={() => setMode("auction")}
               className="flex items-center space-x-1 h-8 px-3 text-xs"
             >
-              <Gavel className="h-3 w-3" />
+              <GavelIcon />
               <span>拍卖行</span>
             </Button>
 
@@ -107,7 +151,7 @@ export function Navigation() {
               onClick={() => setMode("law")}
               className="flex items-center space-x-1 h-8 px-3 text-xs"
             >
-              <Scale className="h-3 w-3" />
+              <ScaleIcon />
               <span>律师事务所</span>
             </Button>
           </div>
@@ -328,7 +372,7 @@ export function Navigation() {
             ) : (
               <>
                 <form onSubmit={handleSearch} className="relative hidden sm:block">
-                  <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                  <SearchIcon />
                   <Input
                     type="search"
                     placeholder="搜索拍品"
@@ -338,7 +382,7 @@ export function Navigation() {
                   />
                 </form>
                 <Button variant="ghost" size="icon" onClick={handleFavoritesClick} title="收藏夹">
-                  <Heart className="h-4 w-4" />
+                  <HeartIcon />
                 </Button>
               </>
             )}
@@ -365,17 +409,17 @@ export function Navigation() {
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
                     <Link href="/dashboard">
-                      <User className="mr-2 h-4 w-4" />
+                      <UserIcon />
                       <span>个人中心</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <Settings className="mr-2 h-4 w-4" />
+                    <SettingsIcon />
                     <span>账户设置</span>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>
-                    <LogOut className="mr-2 h-4 w-4" />
+                    <LogOutIcon />
                     <span>退出登录</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -383,7 +427,7 @@ export function Navigation() {
             ) : (
               <Button variant="outline" size="sm" asChild>
                 <Link href="/auth/login">
-                  <User className="h-4 w-4 mr-2" />
+                  <UserIcon />
                   登录
                 </Link>
               </Button>
