@@ -131,9 +131,7 @@ export function Navigation() {
                   <div className="grid gap-3 p-6 w-[400px]">
                     {mode === "auction" ? (
                       <>
-                        <NavigationMenuLink asChild>
-
-                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild></NavigationMenuLink>
                         <NavigationMenuLink asChild>
                           <Link
                             href="/auctions/featured"
@@ -153,17 +151,6 @@ export function Navigation() {
                             <div className="text-sm font-medium leading-none">即将开始</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               预展和即将开始的拍卖
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/auctions/results"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium leading-none">拍卖结果</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              查看已结束拍卖的成交结果
                             </p>
                           </Link>
                         </NavigationMenuLink>
