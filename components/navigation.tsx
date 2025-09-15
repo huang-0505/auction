@@ -120,7 +120,7 @@ export function Navigation() {
               <NavigationMenuItem>
                 {mode === "auction" ? (
                   <NavigationMenuTrigger className="h-10 px-4 py-2" style={{ minWidth: "80px" }}>
-                    拍卖会
+                    拍卖品分类
                   </NavigationMenuTrigger>
                 ) : (
                   <NavigationMenuTrigger className="h-10 px-4 py-2" style={{ minWidth: "80px" }}>
@@ -217,7 +217,7 @@ export function Navigation() {
               <NavigationMenuItem>
                 {mode === "auction" ? (
                   <NavigationMenuTrigger className="h-10 px-4 py-2" style={{ minWidth: "90px" }}>
-                    艺术品分类
+                    拍卖品分类
                   </NavigationMenuTrigger>
                 ) : (
                   <button
