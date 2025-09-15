@@ -120,7 +120,7 @@ export function Navigation() {
               <NavigationMenuItem>
                 {mode === "auction" ? (
                   <NavigationMenuTrigger className="h-10 px-4 py-2" style={{ minWidth: "80px" }}>
-                    拍卖品分类
+                    拍卖会
                   </NavigationMenuTrigger>
                 ) : (
                   <NavigationMenuTrigger className="h-10 px-4 py-2" style={{ minWidth: "80px" }}>
@@ -136,7 +136,7 @@ export function Navigation() {
                             href="/auctions"
                             className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
                           >
-                            <div className="text-sm font-medium leading-none">拍卖会</div>
+                            <div className="text-sm font-medium leading-none">所有拍卖会</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">浏览全部拍卖项目</p>
                           </Link>
                         </NavigationMenuLink>
