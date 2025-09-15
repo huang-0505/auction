@@ -56,9 +56,9 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-                <div className="space-y-6">
-                  <h2 className="text-3xl font-semibold">公司简介</h2>
+              <div className="space-y-12 mb-16">
+                <div className="max-w-5xl mx-auto">
+                  <h2 className="text-3xl font-semibold mb-8">公司简介</h2>
                   <div className="prose prose-lg max-w-none">
                     <p className="text-muted-foreground leading-relaxed">
                       上海金沪拍卖有限公司成立于2010年，致力于为客户提供专业的拍卖服务。
@@ -81,9 +81,9 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="space-y-6">
-                  <h2 className="text-3xl font-semibold">企业文化</h2>
-                  <div className="space-y-4">
+                <div className="max-w-5xl mx-auto">
+                  <h2 className="text-3xl font-semibold mb-8">企业文化</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="bg-muted/30 rounded-lg p-6">
                       <h3 className="font-semibold mb-2 text-primary">企业使命</h3>
                       <p className="text-muted-foreground">
