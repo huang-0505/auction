@@ -2,6 +2,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, Clock, Eye } from "lucide-react"
+import Link from "next/link"
 
 const featuredAuctions = [
   {
@@ -152,9 +153,11 @@ export function FeaturedAuctions() {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg">
-            查看所有拍卖会
-          </Button>
+          <Link href="/auctions/featured">
+            <Button variant="outline" size="lg">
+              查看所有拍卖会
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
