@@ -61,13 +61,22 @@ export default function AboutPage() {
                   <h2 className="text-3xl font-semibold">公司简介</h2>
                   <div className="prose prose-lg max-w-none">
                     <p className="text-muted-foreground leading-relaxed">
-                      上海金沪拍卖有限公司成立于2024年，是经国家文物局批准，具有文物拍卖资质的专业拍卖机构。公司注册资本1000万元人民币，总部位于上海市杨浦区长阳路2592号电力科技园。
+                      上海金沪拍卖有限公司成立于2010年，致力于为客户提供专业的拍卖服务。
                     </p>
                     <p className="text-muted-foreground leading-relaxed">
                       公司秉承"诚信为本、专业至上"的经营理念，致力于为广大收藏家、投资者和艺术爱好者提供高品质、多元化的拍卖服务。我们的业务范围涵盖房地产拍卖、艺术品拍卖、古董文物拍卖等多个领域。
                     </p>
                     <p className="text-muted-foreground leading-relaxed">
                       金沪拍卖拥有一支由资深拍卖师、艺术品鉴定专家、法律顾问组成的专业团队，确保每一场拍卖会的专业性和权威性。我们严格遵循国家相关法律法规，建立了完善的拍品征集、鉴定、展示、拍卖流程。
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      作为上海市拍卖行业协会会员单位，金沪拍卖始终坚持规范经营，诚信服务。我们拥有完善的拍卖资质和丰富的拍卖经验，曾成功举办过多场大型拍卖会，涉及房地产、艺术品、古董文物等多个领域，赢得了广大客户的信赖和好评。
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      公司总部位于上海市杨浦区长阳路2592号电力科技园，拥有现代化的办公环境和专业的拍卖场所。我们配备了先进的拍卖设备和完善的安保系统，为每一场拍卖会的顺利进行提供有力保障。
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      展望未来，金沪拍卖将继续秉承"诚信、专业、创新、共赢"的核心价值观，不断提升服务质量，拓展业务领域，努力成为中国领先的综合性拍卖服务平台，为推动中国艺术品市场的健康发展贡献力量。
                     </p>
                   </div>
                 </div>
