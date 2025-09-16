@@ -1,10 +1,8 @@
-"use client"
-
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, Clock, Eye } from "lucide-react"
-import { useRouter } from "next/router"
+import Link from "next/link"
 
 const featuredAuctions = [
   {
@@ -76,8 +74,6 @@ const featuredAuctions = [
 ]
 
 export function FeaturedAuctions() {
-  const router = useRouter()
-
   return (
     <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -156,11 +152,7 @@ export function FeaturedAuctions() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg" onClick={() => router.push("/auctions/featured")}>
-            查看所有拍卖会
-          </Button>
-        </div>
+        
       </div>
     </section>
   )
