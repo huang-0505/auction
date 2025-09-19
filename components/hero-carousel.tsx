@@ -9,7 +9,7 @@ const slides = [
   {
     id: 1,
     title: "金沪拍卖",
-    subtitle: "专业诚信 服务至上",
+    subtitle: "金开万象，沪守正信",
     description: "上海金沪拍卖有限公司成立于2010年，致力于为客户提供专业的拍卖服务",
     image: "/yangpu-sunrise-view.png",
     primaryButton: "了解我们",
