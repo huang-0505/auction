@@ -9,9 +9,9 @@ const slides = [
   {
     id: 1,
     title: "金沪拍卖",
-    subtitle: "金开万象，沪守正信",
+    subtitle: "专业诚信 服务至上",
     description: "上海金沪拍卖有限公司成立于2010年，致力于为客户提供专业的拍卖服务",
-    image: "/yangpu-sunrise-view.png",
+    image: "/placeholder.svg?height=1080&width=1920",
     primaryButton: "了解我们",
     secondaryButton: "联系我们",
     primaryLink: "/about",
@@ -19,25 +19,25 @@ const slides = [
   },
   {
     id: 2,
-    title: "房地产拍卖",
-    subtitle: "优质资产 投资良机",
-    description: "汇聚上海及周边地区优质房产资源，为投资者提供专业的房产拍卖服务",
-    image: "/real-estate-auction.png",
-    primaryButton: "查看房产",
-    secondaryButton: "拍卖日程",
-    primaryLink: "/categories/real-estate",
-    secondaryLink: "/auctions/upcoming",
+    title: "金沪拍卖",
+    subtitle: "专业诚信 服务至上",
+    description: "上海金沪拍卖有限公司成立于2010年，致力于为客户提供专业的拍卖服务",
+    image: "/placeholder.svg?height=1080&width=1920",
+    primaryButton: "了解我们",
+    secondaryButton: "联系我们",
+    primaryLink: "/about",
+    secondaryLink: "/contact",
   },
   {
     id: 3,
-    title: "精品书画",
-    subtitle: "传世典藏 艺术珍品",
-    description: "甄选名家书画作品，传承中华文化艺术，为收藏家提供顶级艺术品拍卖",
-    image: "/calligraphy-painting.png",
-    primaryButton: "浏览拍卖会",
-    secondaryButton: "艺术鉴赏",
-    primaryLink: "/auctions",
-    secondaryLink: "/categories/calligraphy-painting",
+    title: "金沪拍卖",
+    subtitle: "专业诚信 服务至上",
+    description: "上海金沪拍卖有限公司成立于2010年，致力于为客户提供专业的拍卖服务",
+    image: "/placeholder.svg?height=1080&width=1920",
+    primaryButton: "了解我们",
+    secondaryButton: "联系我们",
+    primaryLink: "/about",
+    secondaryLink: "/contact",
   },
 ]
 
@@ -47,7 +47,7 @@ export function HeroCarousel() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 8000) // 将轮播速度从5秒改为8秒，让用户有更多时间阅读内容
+    }, 8000)
 
     return () => clearInterval(timer)
   }, [])
@@ -82,7 +82,7 @@ export function HeroCarousel() {
               className="w-full h-full object-cover object-center"
               style={{ imageRendering: "high-quality" }}
             />
-            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-black/60" />
           </div>
 
           {/* Content */}
