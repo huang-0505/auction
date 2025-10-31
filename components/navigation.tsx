@@ -2,14 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
+import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@/components/ui/navigation-menu"
 import { useMode } from "@/contexts/mode-context"
 
 const ScaleIcon = () => (
@@ -118,144 +111,44 @@ export function Navigation() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                {mode === "auction" ? (
-                  <NavigationMenuTrigger className="h-10 px-4 py-2" style={{ minWidth: "80px" }}>
-                    拍卖会
-                  </NavigationMenuTrigger>
-                ) : (
-                  <NavigationMenuTrigger className="h-10 px-4 py-2" style={{ minWidth: "80px" }}>
-                    专业领域
-                  </NavigationMenuTrigger>
-                )}
-                <NavigationMenuContent>
-                  <div className="grid gap-3 p-6 w-[400px]">
-                    {mode === "auction" ? (
-                      <>
-                        <NavigationMenuLink asChild></NavigationMenuLink>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/auctions/featured"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium leading-none">精选拍卖会</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              查看当前精选拍卖项目
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/auctions/upcoming"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium leading-none">即将开始</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              预展和即将开始的拍卖
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </>
-                    ) : (
-                      <>
-                        <NavigationMenuLink asChild>
-                          <button
-                            onClick={() => {
-                              const practiceSection = document.querySelector('[data-section="practice"]')
-                              if (practiceSection) {
-                                practiceSection.scrollIntoView({ behavior: "smooth" })
-                              }
-                            }}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground text-left w-full"
-                          >
-                            <div className="text-sm font-medium leading-none">公司法务</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              企业设立、合规、并购重组
-                            </p>
-                          </button>
-                        </NavigationMenuLink>
-                        <NavigationMenuLink asChild>
-                          <button
-                            onClick={() => {
-                              const practiceSection = document.querySelector('[data-section="practice"]')
-                              if (practiceSection) {
-                                practiceSection.scrollIntoView({ behavior: "smooth" })
-                              }
-                            }}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground text-left w-full"
-                          >
-                            <div className="text-sm font-medium leading-none">诉讼仲裁</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              民商事诉讼、仲裁代理
-                            </p>
-                          </button>
-                        </NavigationMenuLink>
-                      </>
-                    )}
-                  </div>
-                </NavigationMenuContent>
+                <Link
+                  href="/categories/real-estate"
+                  className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                  style={{ minWidth: "80px" }}
+                >
+                  房产拍卖
+                </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                {mode === "auction" ? (
-                  <NavigationMenuTrigger className="h-10 px-4 py-2" style={{ minWidth: "90px" }}>
-                    拍卖品分类
-                  </NavigationMenuTrigger>
-                ) : (
-                  <button
-                    onClick={() => {
-                      const teamSection = document.querySelector('[data-section="team"]')
-                      if (teamSection) {
-                        teamSection.scrollIntoView({ behavior: "smooth" })
-                      }
-                    }}
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
-                    style={{ minWidth: "90px" }}
-                  >
-                    律师团队
-                  </button>
-                )}
-                {mode === "auction" && (
-                  <NavigationMenuContent>
-                    <div className="grid gap-3 p-6 w-[400px]">
-                      <NavigationMenuLink asChild>
-                        <Link
-                          href="/categories/real-estate"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                        >
-                          <div className="text-sm font-medium leading-none">房地产</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">住宅、商业地产拍卖</p>
-                        </Link>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          href="/categories/calligraphy-painting"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                        >
-                          <div className="text-sm font-medium leading-none">书画</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">中国书法、绘画作品</p>
-                        </Link>
-                      </NavigationMenuLink>
-                    </div>
-                  </NavigationMenuContent>
-                )}
+                <Link
+                  href="/categories/calligraphy-painting"
+                  className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                  style={{ minWidth: "90px" }}
+                >
+                  艺术品拍卖
+                </Link>
               </NavigationMenuItem>
 
-              {mode === "law" && (
-                <NavigationMenuItem>
-                  <button
-                    onClick={() => {
-                      const cultureSection = document.querySelector('[data-section="culture"]')
-                      if (cultureSection) {
-                        cultureSection.scrollIntoView({ behavior: "smooth" })
-                      }
-                    }}
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
-                    style={{ minWidth: "80px" }}
-                  >
-                    新闻动态
-                  </button>
-                </NavigationMenuItem>
-              )}
+              <NavigationMenuItem>
+                <Link
+                  href="/categories/other"
+                  className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                  style={{ minWidth: "110px" }}
+                >
+                  其他委托拍卖
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link
+                  href="/news"
+                  className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                  style={{ minWidth: "80px" }}
+                >
+                  金沪动态
+                </Link>
+              </NavigationMenuItem>
 
               <NavigationMenuItem>
                 <Link
