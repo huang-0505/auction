@@ -1,5 +1,4 @@
 import { Navigation } from "@/components/navigation"
-import { ArtworkCard } from "@/components/artwork-card"
 
 export default function OtherAuctionsPage() {
   const otherAuctions = [
@@ -50,11 +49,20 @@ export default function OtherAuctionsPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex flex-col items-center justify-center py-16">
+          <div className="text-center space-y-4">
+            <div className="text-6xl text-muted-foreground/30">🚧</div>
+            <h2 className="text-2xl font-semibold text-muted-foreground">暂未开放</h2>
+            <p className="text-muted-foreground/80">该分类正在筹备中，敬请期待</p>
+          </div>
+        </div>
+
+        {/* Removed the grid for artwork cards as the "Not yet open" message is added */}
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {otherAuctions.map((auction) => (
             <ArtworkCard key={auction.id} {...auction} />
           ))}
-        </div>
+        </div> */}
       </main>
     </div>
   )
