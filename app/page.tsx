@@ -12,6 +12,7 @@ import { LawTeamWheel } from "@/components/law-sections/law-team-wheel"
 import { LawCultureWheel } from "@/components/law-sections/law-culture-wheel"
 import { LawContactWheel } from "@/components/law-sections/law-contact-wheel"
 import { LawClosedNotice } from "@/components/law-closed-notice"
+import Link from "next/link"
 
 export default function HomePage() {
   const { mode } = useMode()
@@ -77,18 +78,47 @@ export default function HomePage() {
                 <div>
                   <h4 className="font-semibold mb-4">拍卖服务</h4>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>当前拍卖</li>
-                    <li>即将开始</li>
-                    <li>拍卖结果</li>
-                    <li>委托拍卖</li>
+                    <li>
+                      <Link href="/auctions" className="hover:text-foreground transition-colors">
+                        当前拍卖
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/auctions/upcoming" className="hover:text-foreground transition-colors">
+                        即将开始
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/auctions/results" className="hover:text-foreground transition-colors">
+                        拍卖结果
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/contact" className="hover:text-foreground transition-colors">
+                        委托拍卖
+                      </Link>
+                    </li>
                   </ul>
                 </div>
 
                 <div>
-                  <h4 className="font-semibold mb-4">艺术品分类</h4>
+                  <h4 className="font-semibold mb-4">拍卖分类</h4>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>房地产</li>
-                    <li>书画</li>
+                    <li>
+                      <Link href="/categories/real-estate" className="hover:text-foreground transition-colors">
+                        房产
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/categories/calligraphy-painting" className="hover:text-foreground transition-colors">
+                        艺术品
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/categories/other" className="hover:text-foreground transition-colors">
+                        其他
+                      </Link>
+                    </li>
                   </ul>
                 </div>
 
@@ -104,7 +134,7 @@ export default function HomePage() {
               </div>
 
               <div className="border-t mt-8 pt-8 text-center text-muted-foreground">
-                <p>&copy; 2024 金沪拍卖. 保留所有权利.</p>
+                <p>&copy; 2025 金沪拍卖. 保留所有权利.</p>
               </div>
             </div>
           </footer>

@@ -4,6 +4,7 @@ import { Navigation } from "@/components/navigation"
 import ContactSection from "@/components/contact-section"
 import { LawContactWheel } from "@/components/law-sections/law-contact-wheel"
 import { useMode } from "@/contexts/mode-context"
+import Link from "next/link"
 
 export default function ContactPage() {
   const { mode } = useMode()
@@ -33,18 +34,47 @@ export default function ContactPage() {
             <div>
               <h4 className="font-semibold mb-4">拍卖服务</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li>当前拍卖</li>
-                <li>即将开始</li>
-                <li>拍卖结果</li>
-                <li>委托拍卖</li>
+                <li>
+                  <Link href="/auctions" className="hover:text-foreground transition-colors">
+                    当前拍卖
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/auctions/upcoming" className="hover:text-foreground transition-colors">
+                    即将开始
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/auctions/results" className="hover:text-foreground transition-colors">
+                    拍卖结果
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:text-foreground transition-colors">
+                    委托拍卖
+                  </Link>
+                </li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">艺术品分类</h4>
+              <h4 className="font-semibold mb-4">拍卖分类</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li>房地产</li>
-                <li>书画</li>
+                <li>
+                  <Link href="/categories/real-estate" className="hover:text-foreground transition-colors">
+                    房产
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/categories/calligraphy-painting" className="hover:text-foreground transition-colors">
+                    艺术品
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/categories/other" className="hover:text-foreground transition-colors">
+                    其他
+                  </Link>
+                </li>
               </ul>
             </div>
 
