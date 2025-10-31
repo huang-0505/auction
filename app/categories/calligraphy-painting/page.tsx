@@ -33,8 +33,8 @@ export default function CalligraphyPaintingPage() {
 
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-4">书画拍卖</h1>
-          <p className="text-muted-foreground">传承中华文化，汇聚名家书画作品，为收藏家提供优质的艺术品拍卖服务</p>
+          <h1 className="text-3xl font-bold mb-4">艺术品拍卖</h1>
+          <p className="text-muted-foreground">专注艺术品拍卖，汇聚书画、瓷器、玉器等各类艺术珍品</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

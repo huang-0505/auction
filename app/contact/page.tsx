@@ -51,16 +51,31 @@ export default function ContactPage() {
             <div>
               <h4 className="font-semibold mb-4">联系我们</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li>客服热线: 021-35303599</li>
-                <li> : 021-35070008</li>
-                <li>邮箱: J@jhsen.com</li>
+                <li>
+                  客服热线:{" "}
+                  <a href="tel:021-35303599" className="hover:text-primary transition-colors">
+                    021-35303599
+                  </a>
+                </li>
+                <li>
+                  传真号码:{" "}
+                  <a href="tel:021-35070008" className="hover:text-primary transition-colors">
+                    021-35070008
+                  </a>
+                </li>
+                <li>
+                  邮箱:{" "}
+                  <a href="mailto:J@jhsen.com" className="hover:text-primary transition-colors">
+                    J@jhsen.com
+                  </a>
+                </li>
                 <li>地址: 杨浦区长阳路2592号电力科技园一楼</li>
               </ul>
             </div>
           </div>
 
           <div className="border-t mt-8 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 {mode === "auction" ? "金沪拍卖" : "上海金沪律师事务所"}. 保留所有权利.</p>
+            <p>&copy; 2025 {mode === "auction" ? "金沪拍卖" : "上海金沪律师事务所"}. 保留所有权利.</p>
           </div>
         </div>
       </footer>
