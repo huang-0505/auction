@@ -94,9 +94,7 @@ export default function HomePage() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/contact" className="hover:text-foreground transition-colors">
-                        委托拍卖
-                      </Link>
+                      
                     </li>
                   </ul>
                 </div>
