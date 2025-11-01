@@ -58,7 +58,7 @@ export default function CertificatesPage() {
                 {/* Contract Credit Rating Certificate */}
                 <div className="bg-card border rounded-lg p-6 text-center shadow-sm">
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-HOqRCeq8DX3UoN0hiN58LqnO8X40pZ.png"
+                    src="/images/design-mode/image.png"
                     alt="合同信用等级认定证书"
                     className="w-full h-auto rounded-lg mb-4"
                   />
@@ -70,7 +70,7 @@ export default function CertificatesPage() {
                 {/* China Auction Association AAA Certificate */}
                 <div className="bg-card border rounded-lg p-6 text-center shadow-sm">
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-mL1c7ErYmw4VgeWIHADbg19fb5tw6f.png"
+                    src="/images/design-mode/image.png"
                     alt="中国拍卖行业AAA企业证书"
                     className="w-full h-auto rounded-lg mb-4"
                   />
@@ -82,7 +82,7 @@ export default function CertificatesPage() {
                 {/* Latest AAA Certificate 2023 */}
                 <div className="bg-card border rounded-lg p-6 text-center shadow-sm">
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-S05kSiWbOc3RfiJFp2PDmu04NMUKpc.png"
+                    src="/images/design-mode/image.png"
                     alt="中国拍卖行业AAA企业证书2023"
                     className="w-full h-auto rounded-lg mb-4"
                   />
@@ -94,7 +94,7 @@ export default function CertificatesPage() {
                 {/* Top 50 Transaction Volume Award */}
                 <div className="bg-card border rounded-lg p-6 text-center shadow-sm">
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-4V6TCODAhD3j3LkRMRATi74F1O7hh7.png"
+                    src="/images/design-mode/image.png"
                     alt="成交额前50荣誉证书"
                     className="w-full h-auto rounded-lg mb-4"
                   />
@@ -106,7 +106,7 @@ export default function CertificatesPage() {
                 {/* Excellent Case Award */}
                 <div className="bg-card border rounded-lg p-6 text-center shadow-sm">
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-UftoTcSnAgk5ICOHFLjy2ctqGooGvo.png"
+                    src="/images/design-mode/image.png"
                     alt="优秀案例奖荣誉证书"
                     className="w-full h-auto rounded-lg mb-4"
                   />
@@ -118,7 +118,7 @@ export default function CertificatesPage() {
                 {/* 5A Credit Rating Certificate */}
                 <div className="bg-card border rounded-lg p-6 text-center shadow-sm">
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-lpou0mp7A0fT9ZO1tFxuQfEv2DmfuR.png"
+                    src="/images/design-mode/image.png"
                     alt="上海市拍卖企业信用资质等级5A级证书"
                     className="w-full h-auto rounded-lg mb-4"
                   />
@@ -130,7 +130,7 @@ export default function CertificatesPage() {
                 {/* Public Property Auction Enterprise Certificate */}
                 <div className="bg-card border rounded-lg p-6 text-center shadow-sm">
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-YB7eUsEkb6rRGkHqXtdPBcRquyniig.png"
+                    src="/images/design-mode/image.png"
                     alt="上海市公物罚没物资拍卖企业证书"
                     className="w-full h-auto rounded-lg mb-4"
                   />
@@ -142,7 +142,7 @@ export default function CertificatesPage() {
                 {/* Shanghai Court Announcement */}
                 <div className="bg-card border rounded-lg p-6 text-center shadow-sm">
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-FcequKaZFXa9xNXvFm6MbZFEQrxMo9.png"
+                    src="/images/design-mode/image.png"
                     alt="上海法院网络司法拍卖辅助机构名单库公告"
                     className="w-full h-auto rounded-lg mb-4"
                   />

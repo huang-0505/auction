@@ -76,7 +76,7 @@ export default function ContactSection({ showContactInfo = true, showBusinessHou
                 <div className="mb-6">
                   <div className="flex items-center justify-center mb-3">
                     <img
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-MuEvuU5S9fWob7YgZS4JJzm5DdNOWb.png"
+                      src="/images/design-mode/image.png"
                       alt="微信图标"
                       className="w-6 h-6 mr-3"
                     />

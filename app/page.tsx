@@ -72,7 +72,7 @@ export default function HomePage() {
                   <div className="flex items-center space-x-2 mb-4">
                     <div className="text-2xl font-bold text-primary">金沪拍卖</div>
                   </div>
-                  <p className="text-muted-foreground">专业的艺术品拍卖平台，致力于为收藏家提供高品质的拍卖服务。</p>
+                  <p className="text-muted-foreground">{"金沪拍卖为广大藏家提供专业的、高品质的拍卖服务，欢迎各大藏家光临。"}</p>
                 </div>
 
                 <div>
