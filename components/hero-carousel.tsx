@@ -16,6 +16,8 @@ const slides = [
     secondaryButton: "联系我们",
     primaryLink: "/about",
     secondaryLink: "/contact",
+    imageSize: "contain",
+    imageScale: "70%",
   },
   {
     id: 2,
@@ -79,8 +81,14 @@ export function HeroCarousel() {
             <img
               src={slide.image || "/placeholder.svg"}
               alt={slide.title}
-              className="w-full h-full object-cover object-center"
-              style={{ imageRendering: "high-quality" }}
+              className="w-full h-full object-center"
+              style={{
+                imageRendering: "high-quality",
+                objectFit: slide.imageSize || "cover",
+                width: slide.imageScale || "100%",
+                height: slide.imageScale || "100%",
+                margin: "auto",
+              }}
             />
             <div className="absolute inset-0 bg-black/60" />
           </div>
