@@ -30,7 +30,7 @@ export function LawHeroWheel() {
               className="text-lg px-8 py-6 bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white shadow-xl border-0"
               onClick={() => (window.location.href = "#contact")}
             >
-              免费咨询
+              咨询
             </Button>
             <Button
               variant="outline"

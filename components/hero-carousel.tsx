@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
+import Link from "next/link"
 
 const slides = [
   {
@@ -10,27 +11,35 @@ const slides = [
     title: "金沪拍卖",
     subtitle: "专业诚信 服务至上",
     description: "上海金沪拍卖有限公司成立于2010年，致力于为客户提供专业的拍卖服务",
-    image: "/yangpu-sunrise-view.png",
+    image: "/certificates/trademark.png",
     primaryButton: "了解我们",
     secondaryButton: "联系我们",
+    primaryLink: "/about",
+    secondaryLink: "/contact",
+    imageSize: "contain",
+    imageScale: "70%",
   },
   {
     id: 2,
-    title: "房地产拍卖",
-    subtitle: "优质资产 投资良机",
-    description: "汇聚上海及周边地区优质房产资源，为投资者提供专业的房产拍卖服务",
-    image: "/real-estate-auction.png",
-    primaryButton: "查看房产",
-    secondaryButton: "拍卖日程",
+    title: "金沪拍卖",
+    subtitle: "专业诚信 服务至上",
+    description: "上海金沪拍卖有限公司成立于2010年，致力于为客户提供专业的拍卖服务",
+    image: "/certificates/aaa-certificate.png",
+    primaryButton: "了解我们",
+    secondaryButton: "联系我们",
+    primaryLink: "/about",
+    secondaryLink: "/contact",
   },
   {
     id: 3,
-    title: "精品书画",
-    subtitle: "传世典藏 艺术珍品",
-    description: "甄选名家书画作品，传承中华文化艺术，为收藏家提供顶级艺术品拍卖",
-    image: "/calligraphy-painting.png",
-    primaryButton: "浏览拍卖会",
-    secondaryButton: "艺术鉴赏",
+    title: "金沪拍卖",
+    subtitle: "专业诚信 服务至上",
+    description: "上海金沪拍卖有限公司成立于2010年，致力于为客户提供专业的拍卖服务",
+    image: "/certificates/cultural-relics.png",
+    primaryButton: "了解我们",
+    secondaryButton: "联系我们",
+    primaryLink: "/about",
+    secondaryLink: "/contact",
   },
 ]
 
@@ -40,7 +49,7 @@ export function HeroCarousel() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 8000) // 将轮播速度从5秒改为8秒，让用户有更多时间阅读内容
+    }, 8000)
 
     return () => clearInterval(timer)
   }, [])
@@ -72,10 +81,16 @@ export function HeroCarousel() {
             <img
               src={slide.image || "/placeholder.svg"}
               alt={slide.title}
-              className="w-full h-full object-cover object-center"
-              style={{ imageRendering: "high-quality" }}
+              className="w-full h-full object-center"
+              style={{
+                imageRendering: "high-quality",
+                objectFit: slide.imageSize || "cover",
+                width: slide.imageScale || "100%",
+                height: slide.imageScale || "100%",
+                margin: "auto",
+              }}
             />
-            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-black/60" />
           </div>
 
           {/* Content */}
@@ -86,17 +101,21 @@ export function HeroCarousel() {
                 <h2 className="text-2xl md:text-3xl mb-6 text-white/90 font-light">{slide.subtitle}</h2>
                 <p className="text-lg md:text-xl mb-8 text-white/80 leading-relaxed max-w-xl">{slide.description}</p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="text-lg px-8 py-6 bg-white text-black hover:bg-white/90">
-                    {slide.primaryButton}
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="text-lg px-8 py-6 bg-transparent border-white/50 text-white hover:bg-white/10"
-                  >
-                    {slide.secondaryButton}
-                  </Button>
+                  <Link href={slide.primaryLink}>
+                    <Button size="lg" className="text-lg px-8 py-6 bg-white text-black hover:bg-white/90">
+                      {slide.primaryButton}
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                  </Link>
+                  <Link href={slide.secondaryLink}>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="text-lg px-8 py-6 bg-transparent border-white/50 text-white hover:bg-white/10"
+                    >
+                      {slide.secondaryButton}
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

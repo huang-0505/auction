@@ -44,8 +44,8 @@ export default function RealEstatePage() {
 
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-4">房地产拍卖</h1>
-          <p className="text-muted-foreground">专业的房地产拍卖服务，涵盖住宅、商业地产等各类物业</p>
+          <h1 className="text-3xl font-bold mb-4">房产拍卖</h1>
+          <p className="text-muted-foreground">主要发布司法标的，包括住宅、商业地产等各类房地产拍卖</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
